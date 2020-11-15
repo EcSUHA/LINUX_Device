@@ -1,0 +1,33 @@
+
+
+
+
+# Link the librarys
+
+ # The SCDE Default Librarys
+ 
+  # the Core
+  target_link_libraries(${PROJECT_NAME} PUBLIC core)
+  
+  # the embedded Commands
+  target_link_libraries(${PROJECT_NAME} PUBLIC Attr_Command)
+  target_link_libraries(${PROJECT_NAME} PUBLIC Define_Command)
+  target_link_libraries(${PROJECT_NAME} PUBLIC Delete_Command)
+  target_link_libraries(${PROJECT_NAME} PUBLIC Deleteattr_Command)
+  target_link_libraries(${PROJECT_NAME} PUBLIC Get_Command)
+  target_link_libraries(${PROJECT_NAME} PUBLIC Help_Command)
+  target_link_libraries(${PROJECT_NAME} PUBLIC Include_Command)
+  target_link_libraries(${PROJECT_NAME} PUBLIC IOWrite_Command)
+  target_link_libraries(${PROJECT_NAME} PUBLIC List_Command)
+  target_link_libraries(${PROJECT_NAME} PUBLIC Rename_Command)
+  target_link_libraries(${PROJECT_NAME} PUBLIC Rereadcfg_Command)
+  target_link_libraries(${PROJECT_NAME} PUBLIC Save_Command)
+  target_link_libraries(${PROJECT_NAME} PUBLIC Set_Command)
+  target_link_libraries(${PROJECT_NAME} PUBLIC Setstate_Command)
+  target_link_libraries(${PROJECT_NAME} PUBLIC Shutdown_Command)
+  
+  # the embedded Modules																						
+  target_link_libraries(${PROJECT_NAME} PUBLIC Global_Module)
+  
+ 
+

@@ -15,8 +15,7 @@ based on the Smart Connected Device Engine powered by
 Programmers can provide
   * modules for use in Makers IoT-Devices
   
-IoT Devices setup is stored in the maker.cfg
-IoT Devices state is stored in the state.cfg
+IoT Devices setup is stored in the maker.cfg, IoT Devices state is stored in the state.cfg
 
 Embedded Commands
   * Add

@@ -12,7 +12,7 @@ set(FOO_BUILD_TESTS OFF)
 # Create and import the library targets
 
  # The SCDE default library targets
-   include(lib/DefaultLibTargets.txt)
+   include(scde_core/DefaultLibTargets.txt)
  
  # This SCDE projects additional library targets
  
@@ -35,7 +35,7 @@ include_directories("include")
 # Link the librarys
 
  # The SCDE default librarys
-  include(lib/DefaultLibsToLink.txt)
+  include(scde_core/DefaultLibsToLink.txt)
   
  # This SCDE projects additional librarys
  

@@ -1,3 +1,6 @@
 [submodule "main/lib/modules/Telnet_Module"]
 	path = main/lib/modules/Telnet_Module
 	url = https://github.com/EcSUHA/Telnet_Module.git
+[submodule "main/scde_core"]
+	path = main/scde_core
+	url = ../scde_core.git

@@ -34,3 +34,5 @@
 
 build/**
 dist/**
+/build/
+/dist/

@@ -1,4 +1,4 @@
-project (SCDE)
+project (LINUX_Device)
 
 cmake_minimum_required (VERSION 3.0)
 

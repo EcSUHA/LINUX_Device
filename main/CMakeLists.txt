@@ -30,12 +30,13 @@ add_executable(${PROJECT_NAME} "${CMAKE_CURRENT_SOURCE_DIR}/main.c"
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 
+
 # Link the librarys
 
  # The SCDE Default Librarys
  
   # the Core
-  target_link_libraries(${PROJECT_NAME} PRIVATE SCDE_CORE)
+  target_link_libraries(${PROJECT_NAME} PRIVATE SCDE_CORE  ${CMAKE_DL_LIBS})
   
   # the embedded Commands
   target_link_libraries(${PROJECT_NAME} PRIVATE Attr_Command)
@@ -60,7 +61,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/in
   # the additional Commands
    
   # the additional Modules
-  target_link_libraries(${PROJECT_NAME} PRIVATE Telnet_Module)
+  #target_link_libraries(${PROJECT_NAME} PRIVATE Telnet_Module)
   #target_link_libraries(${PROJECT_NAME} PRIVATE WebIf_Module)        
 
 

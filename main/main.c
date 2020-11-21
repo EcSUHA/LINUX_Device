@@ -496,8 +496,8 @@ int main()
   // --- now the optional modules
 
   // Activate Telnet as SCDE built-in Module
-  extern ProvidedByModule_t Telnet_ProvidedByModule;
-  CommandActivateModule(&Telnet_ProvidedByModule);
+//  extern ProvidedByModule_t Telnet_ProvidedByModule;
+//  CommandActivateModule(&Telnet_ProvidedByModule);
 
 
 // -------------------------------------------------------------------------------------------------

@@ -4,3 +4,6 @@
 [submodule "main/scde_core"]
 	path = main/scde_core
 	url = ../scde_core.git
+[submodule "main/scde_optional/modules/Telnet_Module"]
+	path = main/scde_optional/modules/Telnet_Module
+	url = ../Telnet_Module.git

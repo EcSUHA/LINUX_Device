@@ -15,7 +15,6 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/scde_core/include)
 
 
 add_subdirectory(scde_core)
-add_subdirectory(lib) #scde_optional)
 add_subdirectory(scde_optional)
 
 

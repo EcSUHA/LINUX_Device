@@ -7,33 +7,46 @@
 ### The new tool for makers to create IoT Devices
 
 Makers can quickly build a firmware for their IoT-Devices
-based on the Smart Connected Device Engine powered by 
-  * included modules (core)
-  * own modules
-  * third party modules
+based on the Smart Connected Device Engine core extended by 
+  * included commands and modules
+  * own commands and modules
+  * third party commands and modules
   
 Programmers can provide
-  * modules for use in Makers IoT-Devices
+  * commands and modules for use in Makers IoT-Devices
   
 IoT Devices setup is stored in the maker.cfg, IoT Devices state is stored in the state.cfg
 
-Embedded Commands
-  * Add
+Embedded Commands (SCDE-Core)
   * Attr
   * Define
   * Delete
   * Deleteattr
+  * Get
   * Help
   * Include
+  * IOWrite
   * List
+  * Rename
+  * Rereadcfg
+  * Save
   * Set
+  * Setstate 
   * Shutdown
-  * Sub
 
-Embedded Modules
+Embedded Modules (SCDE-Core)
   * Global
 
-Additional Modules
+Embedded Commands (linked in build process, Linux-Platform)
+  * Reloadcommand
+
+Embedded Modules (linked in build process, Linux-Platform)
+  * -/-
+  
+Additional Commands (loadable module, Linux-Platform)
+  * Reloadmodule
+
+Additional Modules (loadable module, Linux-Platform)
   * Telnet (maintained as Module-Template)
 
 
@@ -57,14 +70,32 @@ EcSUHA - ECONOMIC SURVEILLANCE AND HOME AUTOMATION - WWW.EcSUHA.DE
 ---
 
 
+Recommended installation and use:
+
+1. create folder home/LINUX
+
+2. clone LINUX_Device into this folder, can use custom name - recurse-submodules
+
+$ git clone --recurse-submodules https://github.com/EcSUHA/LINUX_Device.git My_LINUX_Device
+
+4. ! fix SPIFFs path in source code, commands/Include_Command.c !
+				,"/home/maikschulze/LINUX/LINUX_Device/spiffs/%.*s"
+
+5. rebuild (in the folder)
+./rebuild.sh
+
+6. make executable
+chmod a+x ~/LINUX/SCDE/dist/release/bin/SCDE
+
+7. run
+./SCDE
+
+8. Connect via telnet (Putty) on port 9999 (according to maker.cfg file)
 
 
+---
 
-
-
-
-
-
+NOTES:
 
 build:
 ./build.sh
@@ -74,7 +105,6 @@ aufräumen:
 
 aufräumen+build:
 ./rebuild.sh
-
 
 install preparations:
 ./prepare.sh

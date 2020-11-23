@@ -7,9 +7,9 @@ cmake_policy(VERSION 2.6)
  # This SCDE projects additional library targets
  
   # the additional Commands
-  add_subdirectory(commands)
+  add_subdirectory(Reloadmodule_Command)
   
   # the additional Modules
-  add_subdirectory(modules)
+
 
 

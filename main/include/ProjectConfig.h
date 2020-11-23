@@ -36,6 +36,7 @@
 #define Help_Command_DBG                              7
 #define Include_Command_DBG                           7
 #define List_Command_DBG                              7
+#define RELOADMODULE_COMMAND_DBG                      7
 #define Rename_Command_DBG                            7
 #define Rereadcfg_Command_DBG                         7
 #define Save_Command_DBG                              7

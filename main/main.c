@@ -493,8 +493,15 @@ int main()
   extern ProvidedByModule_t Global_ProvidedByModule;
   CommandActivateModule(&Global_ProvidedByModule);
 
-  // --- now the optional modules
 
+ // --- now the optional commands
+
+  // Activate Reloadmodule as SCDE built-in Command
+  extern ProvidedByCommand_t Reloadmodule_ProvidedByCommand;
+  CommandActivateCommand(&Reloadmodule_ProvidedByCommand);
+
+  // --- now the optional modules
+  
   // Activate Telnet as SCDE built-in Module
 //  extern ProvidedByModule_t Telnet_ProvidedByModule;
 //  CommandActivateModule(&Telnet_ProvidedByModule);

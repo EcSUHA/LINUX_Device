@@ -16,7 +16,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/scde_core/include)
 
 add_subdirectory(scde_core)
 add_subdirectory(lib) #scde_optional)
-
+add_subdirectory(scde_optional)
 
 
 
@@ -59,10 +59,10 @@ target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/in
   target_link_libraries(${PROJECT_NAME} PRIVATE Global_Module)
  
   # the additional Commands
-   
+  target_link_libraries(${PROJECT_NAME} PRIVATE Reloadmodule_Command)
+  
   # the additional Modules
   #target_link_libraries(${PROJECT_NAME} PRIVATE Telnet_Module)
-  #target_link_libraries(${PROJECT_NAME} PRIVATE WebIf_Module)        
 
 
 

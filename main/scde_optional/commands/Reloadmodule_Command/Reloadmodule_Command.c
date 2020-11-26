@@ -255,13 +255,17 @@ Reloadmodule_Command2Fn (const String_t args)
 	
 //#endif
    
+   #if defined(LINUX_PLATFORM)
+   xyz
+   #endif
+   
 //#if defined(LINUX_PLATFORM)// LINUX_PLATFORM
 #else
 
   // build lib.so filename
   char *file_name;
   asprintf(&file_name
-		,"/home/maikschulze/LINUX/LINUX_Device/build/release/main/lib/modules/Telnet_Module/lib%.*s_Module.so"
+		,"/home/maikschulze/LINUX/LINUX_Device/build/release/main/scde_optional/modules/Telnet_Module/lib%.*s_Module.so"
 		,module_name.len
 		,module_name.p_char);
 		
@@ -284,7 +288,7 @@ Reloadmodule_Command2Fn (const String_t args)
   free(file_name);
 
   // open failed ?
-  if (lib_handle == NULL) {
+  if (!lib_handle) {
   
 	// alloc mem for retMsg
 	Entry_String_t* p_entry_ret_msg =
@@ -313,7 +317,7 @@ Reloadmodule_Command2Fn (const String_t args)
 		,module_name.len
 		,module_name.p_char);
   
-  // Get ptr to ProvidedByModule_t. We need the function callbacks for module operation
+  // Get ptr to ProvidedByEntry_Module_t. We need the function callbacks for module operation
   ProvidedByModule_t* provided_by_loaded_module;
 	
   provided_by_loaded_module = dlsym(lib_handle, symbol_name);
@@ -362,13 +366,13 @@ Reloadmodule_Command2Fn (const String_t args)
   provided_by_loaded_module->InitializeFn(SCDERoot);
 
   // store the Module (provided Fn's, and the lib handle for possible clean up)
-  Module_t* new_module;
+  Entry_Module_t* new_module;
   
-  new_module = (Module_t*) malloc(sizeof(Module_t));
+  new_module = (Entry_Module_t*) malloc(sizeof(Entry_Module_t));
   new_module->provided = provided_by_loaded_module;
   new_module->lib_handle = lib_handle;
   
-  STAILQ_INSERT_HEAD(&SCDERoot->HeadModules, new_module, entries);
+  STAILQ_INSERT_HEAD(&SCDERoot->head_module, new_module, entries);
 
   #if RELOADMODULE_COMMAND_DBG >= 5
    SCDEFn->Log3Fn(Reloadmodule_ProvidedByCommand.commandNameText

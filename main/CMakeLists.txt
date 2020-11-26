@@ -58,7 +58,8 @@ target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/in
   target_link_libraries(${PROJECT_NAME} PRIVATE Global_Module)
  
   # the additional Commands
-  target_link_libraries(${PROJECT_NAME} PRIVATE Reloadmodule_Command)
+  target_link_libraries(${PROJECT_NAME} PRIVATE Reloadcommand_Command)
+  #target_link_libraries(${PROJECT_NAME} PRIVATE Reloadmodule_Command)
   
   # the additional Modules
   #target_link_libraries(${PROJECT_NAME} PRIVATE Telnet_Module)
@@ -66,7 +67,12 @@ target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/in
 
 
 # Install the target
-install(TARGETS ${PROJECT_NAME} DESTINATION ${INSTALL_DIR})
+install(TARGETS ${PROJECT_NAME} 
+		CONFIGURATIONS Release 
+		DESTINATION ${INSTALL_DIR} 
+		PERMISSIONS OWNER_EXECUTE
+)
+
 
 
 

@@ -9,6 +9,6 @@ cmake_policy(VERSION 2.6)
   # the additional Commands
 
   # the additional Modules
-
+  add_subdirectory(Telnet_Module)
 
 

@@ -67,6 +67,7 @@ This is part of
  
 EcSUHA - ECONOMIC SURVEILLANCE AND HOME AUTOMATION - WWW.EcSUHA.DE
 
+
 ---
 
 
@@ -76,7 +77,7 @@ Recommended installation and use:
 
 2. clone LINUX_Device into this folder, can use custom name - recurse-submodules
 
-$ git clone --recurse-submodules https://github.com/EcSUHA/LINUX_Device.git My_LINUX_Device
+$ git clone --recurse-submodules https://github.com/EcSUHA/LINUX_Device.git
 
 4. ! fix SPIFFs path in source code, commands/Include_Command.c !
 				,"/home/maikschulze/LINUX/LINUX_Device/spiffs/%.*s"
@@ -85,10 +86,10 @@ $ git clone --recurse-submodules https://github.com/EcSUHA/LINUX_Device.git My_L
 ./rebuild.sh
 
 6. make executable
-chmod a+x ~/LINUX/SCDE/dist/release/bin/SCDE
+chmod a+x ~/LINUX/LINUX_Device/dist/release/bin/LINUX_Device
 
 7. run
-./SCDE
+./LINUX_Device
 
 8. Connect via telnet (Putty) on port 9999 (according to maker.cfg file)
 

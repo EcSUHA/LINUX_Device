@@ -8,6 +8,7 @@ cmake_policy(VERSION 2.6)
  
   # the additional Commands
   add_subdirectory(Reloadmodule_Command)
+  add_subdirectory(Reloadcommand_Command)
   
   # the additional Modules
 
